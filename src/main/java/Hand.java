@@ -10,5 +10,10 @@ public class Hand {
     public int cardCount(){
         return this.hand.size();
     }
+
+    public void addCardToHand(Deck deck){
+       this.hand.add(deck.removeCardFromDeck());
+    }
+
 }
 

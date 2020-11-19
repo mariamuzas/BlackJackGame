@@ -24,11 +24,12 @@ public class Deck {
             }
         }
     }
-    
+
     public void shuffleDeck(){
         Collections.shuffle(deck);
     }
-    
-    
 
+    public Card removeCardFromDeck() {
+        return this.deck.remove(0);
+    }
 }

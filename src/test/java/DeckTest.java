@@ -16,11 +16,17 @@ public class DeckTest {
     public void deckStartsEmpty(){
         assertEquals(0, deck.getCardCount());
    }
-   
+
    @Test
-    public void canPopulateDeck(){  
+    public void canPopulateDeck(){
         deck.populateDeck();
         assertEquals(52, deck.getCardCount());
-        
+   }
+
+   @Test
+    public void canGetCard(){
+        deck.populateDeck();
+        deck.removeCardFromDeck();
+        assertEquals(51, deck.getCardCount());
    }
 }
