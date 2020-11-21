@@ -3,27 +3,27 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class HandTest {
+public class PlayerTest {
 
-    Player hand;
+    Player player;
     Deck deck;
 
     @Before
     public void before(){
-        hand = new Player();
+        player = new Player();
         deck = new Deck();
         deck.populateDeck();
     }
 
     @Test
     public void startWithNoCards(){
-        assertEquals(0, hand.cardCount());
+        assertEquals(0, player.cardCount());
     }
 
     @Test
     public void canAddCardToHand() {
-        hand.addCardToHand(deck);
-        assertEquals(1, hand.cardCount());
+        player.addCardToHand(deck);
+        assertEquals(1, player.cardCount());
     }
 
 }
