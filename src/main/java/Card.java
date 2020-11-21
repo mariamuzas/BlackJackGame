@@ -1,4 +1,5 @@
 public class Card {
+
     private SuitType suit;
     private RankType rank;
 
@@ -18,6 +19,11 @@ public class Card {
     public int getValueRank(){
         return this.rank.getValue();
     }
-    
+
+    public String getCardName() {
+        return String.format("%s of %s", this.rank, this.suit);
+    }
+
+
     
 }

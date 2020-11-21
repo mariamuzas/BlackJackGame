@@ -25,4 +25,9 @@ public class CardTest {
     public void cardHasValueOfThree(){
         assertEquals(3, playingCard.getValueRank());
     }
+
+    @Test
+    public void  canGetCardName() {
+        assertEquals("THREE of HEARTS", playingCard.getCardName());
+    }
 }
