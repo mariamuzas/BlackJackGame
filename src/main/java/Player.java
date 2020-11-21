@@ -23,5 +23,16 @@ public class Player {
         this.hand.add(card);
     }
 
+    public String showCard(int index){
+        return this.hand.get(index).getCardName();
+    }
+
+    public int handTotal() {
+        int total = 0;
+        for (Card card : this.hand) {
+            total += card.getValueRank();
+        }
+        return total;
+    }
 }
 

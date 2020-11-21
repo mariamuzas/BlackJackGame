@@ -29,11 +29,34 @@ public class GameTest {
     public void canDealTwoToPlayer() {
         game.dealTwoToPlayer();
         assertEquals(2, player.cardCount());
+        assertEquals(50, dealer.deckCount());
     }
 
-    @Test void canDealTwotoDealer() {
+    @Test
+    public void canDealTwoToDealer() {
         game.dealTwoToDealer();
         assertEquals(2, dealer.cardCount());
+        assertEquals(50, dealer.deckCount());
+    }
+
+    @Test
+    public void canDealToDealerAndPlayer() {
+        game.dealTwoToPlayer();
+        game.dealTwoToDealer();
+        assertEquals(2, dealer.cardCount());
+        assertEquals(2, player.cardCount());
+        assertEquals(48, dealer.deckCount());
+    }
+
+    @Test
+    public void canAddValueOfHands() {
+        game.dealTwoToPlayer();
+        System.out.println(player.showCard(0));
+        System.out.println(player.showCard(1));
+        game.dealTwoToDealer();
+        System.out.println(dealer.showCard(0));
+        System.out.println(dealer.showCard(1));
+
     }
 
 }
