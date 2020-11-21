@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 public class Deck {
@@ -16,13 +17,13 @@ public class Deck {
         return this.deck.size();
     }
 
-    public void populateDeck(){
+    public ArrayList<Card> populateDeck(){
         for (SuitType suit : SuitType.values()) {
             for (RankType rank : RankType.values()) {
                 Card card = new Card(suit, rank);
                 this.deck.add(card);
             }
-        }
+        } return this.deck;
     }
 
     public void shuffleDeck(){

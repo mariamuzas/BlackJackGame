@@ -7,6 +7,7 @@ public class PlayerTest {
 
     Player player;
     Deck deck;
+    Card card;
 
     @Before
     public void before(){
@@ -21,8 +22,8 @@ public class PlayerTest {
     }
 
     @Test
-    public void canAddCardToHand() {
-        player.addCardToHand(deck);
+    public void canTakeCard() {
+        player.takeCard(card);
         assertEquals(1, player.cardCount());
     }
 

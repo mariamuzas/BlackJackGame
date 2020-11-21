@@ -1,15 +1,25 @@
 public class Game {
 
-    Deck deck;
     Dealer dealer;
     Player player;
 
-    public Game(Deck deck) {
-        this.deck = deck;
+    public Game(Player player, Dealer dealer) {
+        this.player = player;
+        this.dealer = dealer;
     }
 
-    public void dealTwoToPlayer(Player player) {
-        player.addCardToHand(deck);
+    public void dealTwoToPlayer() {
+        for (int i =0; i<2; i++) {
+            Card card = dealer.dealOne();
+            this.player.takeCard(card);
+        }
+    }
+
+    public void dealTwoToDealer() {
+        for (int i =0; i<2; i++) {
+            Card card = dealer.dealOne();
+            this.dealer.takeCard(card);
+        }
     }
 
 }

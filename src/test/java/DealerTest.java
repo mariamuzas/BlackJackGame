@@ -10,13 +10,19 @@ public class DealerTest {
 
     @Before
     public void before() {
-        dealer = new Dealer();
         deck = new Deck();
-        deck.populateDeck();
+        dealer = new Dealer(deck);
     }
 
     @Test
     public void dealerStartsEmptyHand() {
         assertEquals(0, dealer.cardCount());
     }
+
+    @Test
+    public void dealerHasPopulatedOwnDeck() {
+        dealer.populatedDeck(deck);
+        assertEquals(52, dealer.deckCount());
+    }
 }
+

@@ -1,4 +1,5 @@
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -12,13 +13,27 @@ public class GameTest {
     @Before
     public void before() {
         player = new Player();
-        dealer = new Dealer();
+        dealer = new Dealer(deck);
         deck = new Deck();
-        game = new Game(deck);
+        game = new Game(player, dealer);
+        dealer.populatedDeck(deck);
+
     }
 
-    public void canDealOneToPlayer() {
-        assertEquals(1, player.cardCount());
+    @Test
+    public void gameHasADeckOf52() {
+        assertEquals(52, deck.getCardCount());
+    }
+
+    @Test
+    public void canDealTwoToPlayer() {
+        game.dealTwoToPlayer();
+        assertEquals(2, player.cardCount());
+    }
+
+    @Test void canDealTwotoDealer() {
+        game.dealTwoToDealer();
+        assertEquals(2, dealer.cardCount());
     }
 
 }

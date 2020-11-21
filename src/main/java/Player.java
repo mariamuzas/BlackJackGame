@@ -19,8 +19,8 @@ public class Player {
         return this.hand.size();
     }
 
-    public void addCardToHand(Deck deck){
-       this.hand.add(deck.dealOne());
+    public void takeCard(Card card) {
+        this.hand.add(card);
     }
 
 }
