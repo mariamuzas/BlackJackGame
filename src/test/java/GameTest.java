@@ -9,6 +9,10 @@ public class GameTest {
     Dealer dealer;
     Deck deck;
     Game game;
+    Card card;
+    Card card1;
+    Card card2;
+    Card card3;
 
     @Before
     public void before() {
@@ -17,6 +21,10 @@ public class GameTest {
         deck = new Deck();
         game = new Game(player, dealer);
         dealer.populatedDeck(deck);
+        card = new Card(SuitType.SPADES, RankType.ACE);
+        card1 = new Card(SuitType.HEARTS, RankType.THREE);
+        card2 = new Card(SuitType.HEARTS, RankType.TWO);
+        card3 = new Card(SuitType.HEARTS, RankType.FIVE);
 
     }
 
@@ -49,14 +57,21 @@ public class GameTest {
     }
 
     @Test
-    public void canAddValueOfHands() {
-        game.dealTwoToPlayer();
-        System.out.println(player.showCard(0));
-        System.out.println(player.showCard(1));
-        game.dealTwoToDealer();
-        System.out.println(dealer.showCard(0));
-        System.out.println(dealer.showCard(1));
+    public void canCompareDraw() {
+        dealer.takeCard(card);
+        dealer.takeCard(card1);
+        player.takeCard(card);
+        player.takeCard(card1);
+        assertEquals("Draw", game.compareHands());
+    }
 
+    @Test
+    public void playerCanWin() {
+        dealer.takeCard(card);
+        dealer.takeCard(card1);
+        player.takeCard(card2);
+        player.takeCard(card3);
+        assertEquals("Player wins", game.compareHands());
     }
 
 }

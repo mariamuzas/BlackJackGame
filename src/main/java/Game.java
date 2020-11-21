@@ -22,6 +22,16 @@ public class Game {
         }
     }
 
+    public String compareHands() {
+        if ( player.handTotal() > dealer.handTotal()){
+            return "Player wins";
+        } else if ( player.handTotal() == dealer.handTotal()) {
+            return "Draw";
+        }else {
+            return "Dealer Wins";
+        }
+    }
+
 
 
 
