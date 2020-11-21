@@ -32,6 +32,11 @@ public class Game {
         }
     }
 
+    public void playerTwist() {
+        Card card = dealer.dealOne();
+        player.playerTwist(card);
+    }
+
 
 
 

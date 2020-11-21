@@ -4,15 +4,24 @@ public class Player {
 
     private String name;
     private ArrayList<Card> hand;
-
+    private boolean twist;
 
     public Player(){
         this.name = name;
         this.hand = new ArrayList<>();
+        this.twist = twist;
     }
 
     public String getName() {
-        return name;
+        return this.name;
+    }
+
+    public Boolean getTwist() {
+        return this.twist;
+    }
+
+    public void setTwist(boolean twist) {
+        this.twist = twist;
     }
 
     public void setName(String name) {
@@ -39,6 +48,11 @@ public class Player {
         return total;
     }
 
+    public void playerTwist(Card card) {
+        if (getTwist()) {
+            takeCard(card);
+        }
+    }
 
 }
 

@@ -35,6 +35,21 @@ public class PlayerTest {
         assertEquals(4, player.handTotal());
     }
 
+    @Test
+    public void canTwist() {
+        player.takeCard(card);
+        player.setTwist(true);
+        player.playerTwist(card1);
+        assertEquals(2, player.cardCount());
+    }
+
+    @Test
+    public void dontWantTwist() {
+        player.takeCard(card);
+        player.setTwist(false);
+        player.playerTwist(card1);
+        assertEquals(1, player.cardCount());
+    }
 
 }
 
