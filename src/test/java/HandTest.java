@@ -5,12 +5,12 @@ import static org.junit.Assert.assertEquals;
 
 public class HandTest {
 
-    Hand hand;
+    Player hand;
     Deck deck;
 
     @Before
     public void before(){
-        hand = new Hand();
+        hand = new Player();
         deck = new Deck();
         deck.populateDeck();
     }

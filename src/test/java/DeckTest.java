@@ -26,7 +26,7 @@ public class DeckTest {
    @Test
     public void canGetCard(){
         deck.populateDeck();
-        deck.removeCardFromDeck();
+        deck.dealOne();
         assertEquals(51, deck.getCardCount());
    }
 }

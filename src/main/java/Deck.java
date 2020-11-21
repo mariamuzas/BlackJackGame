@@ -29,7 +29,7 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
-    public Card removeCardFromDeck() {
+    public Card dealOne() {
         return this.deck.remove(0);
     }
 }
