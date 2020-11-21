@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="EnumsLab" />
+        <module name="black_jack_game" />
         <module name="EnumLab" />
       </profile>
     </annotationProcessing>
