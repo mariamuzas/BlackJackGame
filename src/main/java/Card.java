@@ -1,14 +1,13 @@
 public class Card {
-    private SuitType suit;//property
+    private SuitType suit;
     private RankType rank;
 
-    public Card(SuitType suit, RankType rank){//constructor method
-        //if suit is in ...
+    public Card(SuitType suit, RankType rank){
         this.suit = suit;
         this.rank = rank;
     }
 
-    public SuitType getSuit(){//get method
+    public SuitType getSuit(){
         return this.suit;
     }
 

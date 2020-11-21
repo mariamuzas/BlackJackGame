@@ -1,8 +1,8 @@
 public enum RankType {
-    ACE(1),//ace is an instance of RankType class with value of 1, they are mini objects.
-    TWO(2),//etc
-    THREE(3),//etc
-    FOUR(4),//etc
+    ACE(1),
+    TWO(2),
+    THREE(3),
+    FOUR(4),
     FIVE(5),
     SIX(6),
     SEVEN(7),
@@ -13,7 +13,7 @@ public enum RankType {
     QUEEN(10),
     KING(10);
 
-    private final int value;//final used as it will never change and noone can change value of the card ie king can't be 3
+    private final int value;
 
     RankType(int value){//constructor
         this.value = value;
