@@ -23,12 +23,12 @@ public class Game {
     }
 
     public String compareHands() {
-        if ( player.handTotal() > dealer.handTotal()){
-            return "Player wins";
+        if ( player.handTotal() < dealer.handTotal() || player.handTotal() > 21) {
+            return "Dealer wins";
         } else if ( player.handTotal() == dealer.handTotal()) {
             return "Draw";
         }else {
-            return "Dealer Wins";
+            return "Player Wins";
         }
     }
 
