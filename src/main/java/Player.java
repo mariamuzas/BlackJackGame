@@ -17,7 +17,7 @@ public class Player {
     }
 
     public ArrayList<Card> getHand() {
-        return hand;
+        return this.hand;
     }
 
     public Boolean getTwist() {

@@ -41,5 +41,23 @@ public class DealerTest {
         dealer.takeCard(card1);
         assertEquals(7, dealer.handTotal());
     }
+
+    @Test
+    public void canTwist(){
+        dealer.takeCard(card);
+        dealer.takeCard(card1);
+        dealer.twist(card1);
+        assertEquals(3, dealer.cardCount());
+    }
+
+    @Test
+    public void cannotTwist(){
+        dealer.takeCard(card);
+        dealer.takeCard(card1);
+        dealer.takeCard(card1);
+        dealer.takeCard(card1);
+        dealer.twist(card1);
+        assertEquals(4, dealer.cardCount());
+    }
 }
 

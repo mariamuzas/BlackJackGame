@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+
 public class Game {
 
     Dealer dealer;
     Player player;
+    Card card;
+    RankType rank;
+    SuitType suit;
 
     public Game(Player player, Dealer dealer) {
         this.player = player;
@@ -23,18 +28,37 @@ public class Game {
     }
 
     public String compareHands() {
-        if ( player.handTotal() < dealer.handTotal() || player.handTotal() > 21) {
+
+        //        check hands if there is any Ace
+//        while value > 21 {for each Ace : totalhand { total hand -21}}
+
+        int playerHand = 0;
+        if (player.handTotal() > 21) {
+            for ( Card card : player.getHand()) {
+                if (card.getRank() == RankType.ACE) {
+                    playerHand = player.handTotal() - 10;
+                }
+            }
+        } else {
+            playerHand = player.handTotal();
+        }
+        if ( playerHand < dealer.handTotal() || playerHand > 21) {
             return "Dealer wins";
-        } else if ( player.handTotal() == dealer.handTotal()) {
-            return "Draw";
-        }else {
+        } else if (playerHand > dealer.handTotal() || dealer.handTotal() < 21) {
             return "Player wins";
+        } else {
+            return "Draw";
         }
     }
 
     public void playerTwist() {
         Card card = dealer.dealOne();
         player.playerTwist(card);
+    }
+
+    public void dealerTwist() {
+        Card card = dealer.dealOne();
+        dealer.twist(card);
     }
 
 

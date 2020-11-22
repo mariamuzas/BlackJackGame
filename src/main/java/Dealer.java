@@ -44,4 +44,9 @@ public class Dealer {
         return total;
     }
 
+    public void twist(Card card){
+        if (handTotal() < 16 ) {
+            takeCard(card);
+        }
+    }
 }

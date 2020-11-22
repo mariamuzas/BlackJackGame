@@ -1,5 +1,5 @@
 public enum RankType {
-    ACE(1),
+    ACE(11),
     TWO(2),
     THREE(3),
     FOUR(4),
@@ -22,4 +22,6 @@ public enum RankType {
     public int getValue(){
         return this.value;
     }
+
+
 }
