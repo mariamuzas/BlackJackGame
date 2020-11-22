@@ -28,7 +28,7 @@ public class Game {
         } else if ( player.handTotal() == dealer.handTotal()) {
             return "Draw";
         }else {
-            return "Player Wins";
+            return "Player wins";
         }
     }
 

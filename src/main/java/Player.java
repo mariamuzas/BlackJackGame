@@ -16,6 +16,10 @@ public class Player {
         return this.name;
     }
 
+    public ArrayList<Card> getHand() {
+        return hand;
+    }
+
     public Boolean getTwist() {
         return this.twist;
     }
@@ -29,7 +33,7 @@ public class Player {
     }
 
     public int cardCount(){
-        return this.hand.size();
+        return getHand().size();
     }
 
     public void takeCard(Card card) {
