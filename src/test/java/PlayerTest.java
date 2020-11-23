@@ -32,7 +32,7 @@ public class PlayerTest {
     public void canGetTotalHand() {
         player.takeCard(card);
         player.takeCard(card1);
-        assertEquals(4, player.handTotal());
+        assertEquals(14, player.handTotal());
     }
 
     @Test

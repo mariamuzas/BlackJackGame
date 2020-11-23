@@ -32,19 +32,23 @@ public class Game {
         //        check hands if there is any Ace
 //        while value > 21 {for each Ace : totalhand { total hand -21}}
 
-        int playerHand = 0;
-        if (player.handTotal() > 21) {
-            for ( Card card : player.getHand()) {
-                if (card.getRank() == RankType.ACE) {
-                    playerHand = player.handTotal() - 10;
-                }
+        int playerHand = player.handTotal();
+        for (Card card : player.getHand()) {
+            if (card.getRank() == RankType.ACE && playerHand > 21) {
+                playerHand -= 10;
             }
-        } else {
-            playerHand = player.handTotal();
         }
-        if ( playerHand < dealer.handTotal() || playerHand > 21) {
+
+        int dealerHand = dealer.handTotal();
+        for (Card card : dealer.getHand()) {
+            if (card.getRank() == RankType.ACE && dealerHand > 21) {
+                dealerHand -= 10;
+            }
+        }
+
+        if (playerHand < dealer.handTotal() || playerHand > 21) {
             return "Dealer wins";
-        } else if (playerHand > dealer.handTotal() || dealer.handTotal() < 21) {
+        } else if (playerHand > dealer.handTotal() || dealer.handTotal() > 21) {
             return "Player wins";
         } else {
             return "Draw";

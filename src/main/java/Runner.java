@@ -56,8 +56,9 @@ public class Runner {
         for(int i = 0; i < dealer.cardCount(); i ++){
             System.out.println(dealer.showCard(i));
         }
+        System.out.println(String.format(game.compareHands()));
         System.out.println(String.format("Dealer's total: %s", dealer.handTotal()));
         System.out.println(String.format("%s's total: %s", player.getName(), player.handTotal()));
-        System.out.println(String.format(game.compareHands()));
+
     }
 }

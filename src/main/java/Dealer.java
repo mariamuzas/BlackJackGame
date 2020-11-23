@@ -11,6 +11,10 @@ public class Dealer {
         this.hand = new ArrayList<>();
     }
 
+    public ArrayList<Card> getHand() {
+        return hand;
+    }
+
     public void populatedDeck(Deck deck) {
         this.deck = deck.populateDeck();
         deck.shuffleDeck();

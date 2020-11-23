@@ -13,6 +13,8 @@ public class GameTest {
     Card card1;
     Card card2;
     Card card3;
+    Card card4;
+    Card card5;
 
     @Before
     public void before() {
@@ -25,7 +27,8 @@ public class GameTest {
         card1 = new Card(SuitType.HEARTS, RankType.THREE);
         card2 = new Card(SuitType.HEARTS, RankType.TWO);
         card3 = new Card(SuitType.HEARTS, RankType.FIVE);
-
+        card4 = new Card(SuitType.HEARTS, RankType.NINE);
+        card5 = new Card(SuitType.HEARTS, RankType.TEN);
     }
 
     @Test
@@ -67,11 +70,30 @@ public class GameTest {
 
     @Test
     public void playerCanWin() {
-        dealer.takeCard(card);
+        dealer.takeCard(card2);
         dealer.takeCard(card1);
-        player.takeCard(card2);
+        player.takeCard(card);
         player.takeCard(card3);
         assertEquals("Player wins", game.compareHands());
     }
 
+    @Test
+    public void playerNotBustWithAces() {
+        player.takeCard(card4);
+        player.takeCard(card5);
+        player.takeCard(card);
+        player.takeCard(card);
+        dealer.takeCard(card4);
+        assertEquals("Player wins", game.compareHands());
+    }
+
+    @Test
+    public void dealerNotBustWithAces() {
+        dealer.takeCard(card4);
+        dealer.takeCard(card5);
+        dealer.takeCard(card);
+        dealer.takeCard(card);
+        player.takeCard(card4);
+        assertEquals("Dealer wins", game.compareHands());
+    }
 }
